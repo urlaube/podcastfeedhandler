@@ -82,8 +82,7 @@ Handlers::set("podcast_type", NULL);
 ```
 
 ## Usage
-
-To use the handler you can add values to header of your content files located at `/user/content/*`.
+To use the handler you can add values to the header of your content files located at `/user/content/*`.
 
 ### Block
 You can set the following value to `true` to define that the episode should be removed from podcast listings:
