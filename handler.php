@@ -111,12 +111,12 @@
               }
               if (null !== value(Handlers::class, static::PODCAST_DESCRIPTION)) {
                 print(fhtml("    <description>%s</description>".NL.
-                            "    <itunes:description>%s</itunes:description>".NL,
+                            "    <itunes:summary>%s</itunes:summary>".NL,
                             value(Handlers::class, static::PODCAST_DESCRIPTION),
                             value(Handlers::class, static::PODCAST_DESCRIPTION)));
               } else {
                 print(fhtml("    <description>%s</description>".NL.
-                            "    <itunes:description>%s</itunes:description>".NL,
+                            "    <itunes:summary>%s</itunes:summary>".NL,
                             value(Themes::class, SITESLOGAN),
                             value(Themes::class, SITESLOGAN)));
               }
