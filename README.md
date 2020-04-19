@@ -2,7 +2,7 @@
 The PodcastFeedHandler handler is a handler generating RSS 2.0 podcast feeds that is based on the default Urlaube FeedHandler class.
 
 ## Installation
-Place the folder containing the handler into your themes directory located at `./user/handlers/`.
+Place the folder containing the handler into your handlers directory located at `./user/handlers/`.
 
 ## Configuration
 To configure the handler you can change the corresponding settings in your configuration file located at `./user/config/config.php`.
