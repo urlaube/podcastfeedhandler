@@ -91,7 +91,7 @@
                 print(fhtml("    <title>%s</title>".NL.
                             "    <itunes:title>%s</itunes:title>".NL.,
                             value(Handlers::class, static::SITENAME),
-                            value(Handlers::class, static::PODCAST_TITLE)));
+                            value(Handlers::class, static::SITENAME)));
               }
               if (null !== value(Handlers::class, static::PODCAST_AUTHOR)) {
                 print(fhtml("    <itunes:author>%s</itunes:author>".NL,
