@@ -78,8 +78,6 @@
                           "    <copyright>%s</copyright>".NL.
                           "    <link>%s</link>".NL.
                           "    <language>%s</language>".NL,
-                          value(Themes::class, SITENAME),
-                          value(Themes::class, SITENAME),
                           value(Themes::class, COPYRIGHT),
                           absoluteurl("/"),
                           strtr(value(Main::class, LANGUAGE), "_", "-")));
