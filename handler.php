@@ -75,7 +75,6 @@
               print(fhtml("<?xml version=\"1.0\" encoding=\"UTF-8\" ?>".NL.
                           "<rss xmlns:itunes=\"http://www.itunes.com/dtds/podcast-1.0.dtd\" version=\"2.0\">".NL.
                           "  <channel>".NL.
-                          "    <itunes:title>%s</itunes:title>".NL.
                           "    <copyright>%s</copyright>".NL.
                           "    <link>%s</link>".NL.
                           "    <language>%s</language>".NL,
@@ -86,10 +85,12 @@
                           strtr(value(Main::class, LANGUAGE), "_", "-")));
 
               if (null !== value(Handlers::class, static::PODCAST_TITLE)) {
-                print(fhtml("    <title>%s</title>".NL.,
+                print(fhtml("    <title>%s</title>".NL.
+                            "    <itunes:title>%s</itunes:title>".NL.,
                             value(Handlers::class, static::PODCAST_TITLE)));
               } else {
-                print(fhtml("    <title>%s</title>".NL.,
+                print(fhtml("    <title>%s</title>".NL.
+                            "    <itunes:title>%s</itunes:title>".NL.,
                             value(Handlers::class, static::SITENAME)));
               }
               if (null !== value(Handlers::class, static::PODCAST_AUTHOR)) {
