@@ -7,6 +7,12 @@ Place the folder containing the handler into your handlers directory located at 
 ## Configuration
 To configure the handler you can change the corresponding settings in your configuration file located at `./user/config/config.php`.
 
+### Podcast Title
+You can set the following value to a string to define the podcast's title (defaults to sitename):
+```
+Handlers::set("podcast_title", NULL);
+```
+
 ### Podcast Author
 You can set the following value to a string to define the podcast's author:
 ```

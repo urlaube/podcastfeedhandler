@@ -24,6 +24,7 @@
       // see https://help.apple.com/itc/podcasts_connect/#/itcb54353390
 
       // these have to be set via Handlers::set()
+      const PODCAST_TITLE      = "podcast_title";
       const PODCAST_AUTHOR      = "podcast_author";
       const PODCAST_BLOCK       = "podcast_block";
       const PODCAST_CATEGORY    = "podcast_category";    // see https://help.apple.com/itc/podcasts_connect/#/itc9267a2f12
@@ -74,17 +75,24 @@
               print(fhtml("<?xml version=\"1.0\" encoding=\"UTF-8\" ?>".NL.
                           "<rss xmlns:itunes=\"http://www.itunes.com/dtds/podcast-1.0.dtd\" version=\"2.0\">".NL.
                           "  <channel>".NL.
-                          "    <title>%s</title>".NL.
-                          "    <itunes:title>%s</itunes:title>".NL.
                           "    <copyright>%s</copyright>".NL.
                           "    <link>%s</link>".NL.
                           "    <language>%s</language>".NL,
-                          value(Themes::class, SITENAME),
-                          value(Themes::class, SITENAME),
                           value(Themes::class, COPYRIGHT),
                           absoluteurl("/"),
                           strtr(value(Main::class, LANGUAGE), "_", "-")));
 
+              if (null !== value(Handlers::class, static::PODCAST_TITLE)) {
+                print(fhtml("    <title>%s</title>".NL.
+                            "    <itunes:title>%s</itunes:title>".NL.,
+                            value(Handlers::class, static::PODCAST_TITLE),
+                            value(Handlers::class, static::PODCAST_TITLE)));
+              } else {
+                print(fhtml("    <title>%s</title>".NL.
+                            "    <itunes:title>%s</itunes:title>".NL.,
+                            value(Handlers::class, static::SITENAME),
+                            value(Handlers::class, static::SITENAME)));
+              }
               if (null !== value(Handlers::class, static::PODCAST_AUTHOR)) {
                 print(fhtml("    <itunes:author>%s</itunes:author>".NL,
                             value(Handlers::class, static::PODCAST_AUTHOR)));
