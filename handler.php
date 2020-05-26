@@ -85,11 +85,13 @@
               if (null !== value(Handlers::class, static::PODCAST_TITLE)) {
                 print(fhtml("    <title>%s</title>".NL.
                             "    <itunes:title>%s</itunes:title>".NL.,
+                            value(Handlers::class, static::PODCAST_TITLE),
                             value(Handlers::class, static::PODCAST_TITLE)));
               } else {
                 print(fhtml("    <title>%s</title>".NL.
                             "    <itunes:title>%s</itunes:title>".NL.,
-                            value(Handlers::class, static::SITENAME)));
+                            value(Handlers::class, static::SITENAME),
+                            value(Handlers::class, static::PODCAST_TITLE)));
               }
               if (null !== value(Handlers::class, static::PODCAST_AUTHOR)) {
                 print(fhtml("    <itunes:author>%s</itunes:author>".NL,
